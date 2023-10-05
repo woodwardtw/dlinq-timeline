@@ -416,10 +416,10 @@ progress {
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
-  --bs-red: #dc3545;
+  --bs-red: #900e0e;
   --bs-orange: #ea854c;
   --bs-yellow: #f4b824;
-  --bs-green: #198754;
+  --bs-green: #12603c;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
   --bs-black: #000;
@@ -437,18 +437,18 @@ progress {
   --bs-gray-900: #212529;
   --bs-primary: #2a2e35;
   --bs-secondary: #6c757d;
-  --bs-success: #198754;
+  --bs-success: #12603c;
   --bs-info: #0dcaf0;
   --bs-warning: #f4b824;
-  --bs-danger: #dc3545;
+  --bs-danger: #900e0e;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
   --bs-primary-rgb: 42, 46, 53;
   --bs-secondary-rgb: 108, 117, 125;
-  --bs-success-rgb: 25, 135, 84;
+  --bs-success-rgb: 18, 96, 60;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 244, 184, 36;
-  --bs-danger-rgb: 220, 53, 69;
+  --bs-danger-rgb: 144, 14, 14;
   --bs-light-rgb: 248, 249, 250;
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
@@ -586,13 +586,13 @@ progress {
 
 .table-success {
   --bs-table-color: #000;
-  --bs-table-bg: #d1e7dd;
-  --bs-table-border-color: #bcd0c7;
-  --bs-table-striped-bg: #c7dbd2;
+  --bs-table-bg: #d0dfd8;
+  --bs-table-border-color: #bbc9c2;
+  --bs-table-striped-bg: #c6d4cd;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #bcd0c7;
+  --bs-table-active-bg: #bbc9c2;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #c1d6cc;
+  --bs-table-hover-bg: #c0cec8;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -628,13 +628,13 @@ progress {
 
 .table-danger {
   --bs-table-color: #000;
-  --bs-table-bg: #f8d7da;
-  --bs-table-border-color: #dfc2c4;
-  --bs-table-striped-bg: #eccccf;
+  --bs-table-bg: #e9cfcf;
+  --bs-table-border-color: #d2baba;
+  --bs-table-striped-bg: #ddc5c5;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #dfc2c4;
+  --bs-table-active-bg: #d2baba;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #e5c7ca;
+  --bs-table-hover-bg: #d8bfbf;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -869,7 +869,7 @@ progress {
 
 .text-bg-success {
   color: #fff !important;
-  background-color: RGBA(25, 135, 84, var(--bs-bg-opacity, 1)) !important;
+  background-color: RGBA(18, 96, 60, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-info {
@@ -884,7 +884,7 @@ progress {
 
 .text-bg-danger {
   color: #fff !important;
-  background-color: RGBA(220, 53, 69, var(--bs-bg-opacity, 1)) !important;
+  background-color: RGBA(144, 14, 14, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-light {
@@ -912,10 +912,10 @@ progress {
 }
 
 .link-success {
-  color: #198754 !important;
+  color: #12603c !important;
 }
 .link-success:hover, .link-success:focus {
-  color: #146c43 !important;
+  color: #0e4d30 !important;
 }
 
 .link-info {
@@ -933,10 +933,10 @@ progress {
 }
 
 .link-danger {
-  color: #dc3545 !important;
+  color: #900e0e !important;
 }
 .link-danger:hover, .link-danger:focus {
-  color: #b02a37 !important;
+  color: #730b0b !important;
 }
 
 .link-light {
@@ -5890,16 +5890,16 @@ progress {
 
 .has-red-color,
 .has-red-color:visited {
-  color: #dc3545;
+  color: #900e0e;
 }
 
 .has-red-background-color {
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: #900e0e;
+  border-color: #900e0e;
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-red-color {
-  color: #dc3545;
+  color: #900e0e;
 }
 
 .has-orange-color,
@@ -5932,16 +5932,16 @@ progress {
 
 .has-green-color,
 .has-green-color:visited {
-  color: #198754;
+  color: #12603c;
 }
 
 .has-green-background-color {
-  background-color: #198754;
-  border-color: #198754;
+  background-color: #12603c;
+  border-color: #12603c;
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-green-color {
-  color: #198754;
+  color: #12603c;
 }
 
 .has-teal-color,
@@ -6058,16 +6058,16 @@ progress {
 
 .has-success-color,
 .has-success-color:visited {
-  color: #198754;
+  color: #12603c;
 }
 
 .has-success-background-color {
-  background-color: #198754;
-  border-color: #198754;
+  background-color: #12603c;
+  border-color: #12603c;
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-success-color {
-  color: #198754;
+  color: #12603c;
 }
 
 .has-info-color,
@@ -6100,16 +6100,16 @@ progress {
 
 .has-danger-color,
 .has-danger-color:visited {
-  color: #dc3545;
+  color: #900e0e;
 }
 
 .has-danger-background-color {
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: #900e0e;
+  border-color: #900e0e;
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-danger-color {
-  color: #dc3545;
+  color: #900e0e;
 }
 
 .has-light-color,

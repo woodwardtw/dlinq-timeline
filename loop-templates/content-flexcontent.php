@@ -58,21 +58,24 @@
                     // code...                   
                         $title = $event['title'] ? "<h2>{$event['title']}</h2>" : '';
                         $content = $event['content'];                        
-                        $year = $event['year'];
+                        $year = ($event['year'] != 0) ? $event['year'] : '';
                         $month = ($event['month'] != 0) ? $event['month'] : '';
                         $day = ($event['day'] != 0) ? $event['day'] : '';
                         $era = $event['era'];
                         $color = $event['color'];
                         $date = "{$year}";
+                        $align = ($key % 2 == 0) ? 'right' : 'left';
                         echo "
-                             <div class='timeline-container'>
-                                <div class='date'>{$year} {$month} {$day}</div>
-                                <div class='icon'></div>
-                                <div class='content'>
-                                    {$title}
-                                    {$content}                  
-                                </div>
+                             <div class='block'>
+                                <div class='block-content {$align} {$color}'>
+                                    <div class='date'>{$year} {$month} {$day}</div>
+                                    <div class='icon'></div>
+                                    <div class='content'>
+                                        {$title}
+                                        {$content}                  
+                                    </div>
                               </div>
+                            </div>
                         ";
                     }                
                 ?>

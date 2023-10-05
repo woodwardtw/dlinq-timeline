@@ -188,182 +188,109 @@ blockquote.big-quote footer p {
 	font-weight: 100;
 }
 
-/*PROJECT STUFF*/
-
-.project-sidebar {
-	background-color: $blue;
-	color: #ffffff;
-	font-family: 'Abril Fatface', serif;
-	font-weight: 600;
-	padding: 50px 50px 100px 50px ;
-}
-
-.project-sidebar h2 {
-	margin-top: 80px;
-}
-
-.project-student-block {
-	font-size: 1.5rem;
-	font-weight: 100;
-}
 
 /*TIMELINE STUFF*/
 .timeline {
-  position: relative;
-  width: 100%;
-  max-width: 95%;
-  margin: 100px auto;
-  padding: 15px 0;
+  width: 90%;
+  margin: 50px auto;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='1'><rect fill='black' x='0' y='0' width='100%' height='100%'/></svg>");
+  background-repeat: repeat-y;
+  background-position: center;
+  padding: 50px;
 }
 
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 2px;
-  background: $dark-green;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -1px;
+.timeline .block {
+  min-height: 100px;
+  margin: 60px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 90px;
 }
 
-.timeline-container {
-  padding: 15px 30px;
-  position: relative;
-  background: inherit;
-  width: 50%;
-}
-
-.timeline-container.left {
-  left: 0;
-}
-
-.timeline-container.right {
-  left: 50%;
-}
-
-.timeline-container::after {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: calc(50% - 8px);
-  right: -8px;
-  background: #ffffff;
-  border: 2px solid $dark-green;
-  border-radius: 16px;
-  z-index: 1;
-}
-
-.timeline-container.right::after {
-  left: -8px;
-}
-
-.timeline-container::before {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 2px;
-  top: calc(50% - 1px);
-  right: 8px;
-  background: $dark-green;
-  z-index: 1;
-}
-
-.timeline-container.right::before {
-  left: 8px;
-}
-
-.timeline-container .date {
-  position: absolute;
-  display: inline-block;
-  top: calc(50% - 8px);
-  text-align: right;
-  font-size: 14px;
-  font-weight: bold;
-  color: $dark-green;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  z-index: 1;
-}
-
-.timeline-container.left .date {
-  right: -175px;
-}
-
-.timeline-container.right .date {
-  left: -175px;
-}
-
-.timeline-container .icon {
-  position: absolute;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  padding: 9px 0;
-  top: calc(50% - 20px);
-  background: $yellow;
-  border: 2px solid $dark-green;
-  border-radius: 40px;
-  text-align: center;
-  font-size: 18px;
-  color: $blue;
-  z-index: 1;
-}
-
-.timeline-container.left .icon {
-  right: 56px;
-}
-
-
-.timeline-container.right .icon {
-  left: 56px;
-}
-
-
-.timeline-container .content {
-  padding: 30px 90px 30px 50px;
-  background: $yellow;
-  position: relative;
-  border-radius: 0 500px 500px 0;
-}
-
-.timeline-container.right .content {
-  padding: 30px 30px 30px 120px;
-  border-radius: 500px 0 0 500px;
-}
-
-.timeline-container .content h2 {
-  margin: 0 0 10px 0;
-  font-size: 2.5rem;
-  color: #000000;
-}
-
-.timeline-container .content p {
-  margin: 0;
-}
-
-
-.timeline-container .content blockquote p{
-	margin-left: 50px;
-	padding: 0 20px 20px 0;
-	// border-left: 2px solid $dark-green;	
-}
-
-.timeline-container blockquote {
+.timeline h2 {
   font-size: 1.5rem;
-  font-style: italic;
 }
 
-.timeline-container blockquote:before {
-  color: $dark-green;
-  content: '\201C';
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.3em;
-  font-family: serif;
+.timeline .block-content {
+  position: relative;
+  background: #fff;
+  border: 3px solid #000;
 }
+
+.timeline .block-content.blue{
+  background-color: rgba($blue,.09);
+   color: $blue;
+   border-color: $blue;
+}
+.timeline .block-content.blue::after,.timeline .block-content.blue::before {
+  background-color: $blue;
+}
+
+.timeline .block-content.red{
+  background-color: rgba($red,.09);
+   color: $red;
+   border-color: $red;
+}
+.timeline .block-content.red::after,.timeline .block-content.red::before {
+  background-color: $red;
+}
+.timeline .block-content.green{
+  background-color: rgba($green,.09);
+   color: $green;
+   border-color: $green;
+}
+.timeline .block-content.green::after,.timeline .block-content.green::before {
+  background-color: $green;
+}
+
+
+.timeline .left {
+  grid-column-start: 1;
+  padding: 40px;
+}
+
+.timeline .right {
+  background: #fff;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  padding: 40px;
+}
+.timeline .block-content::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 4px;
+  background-color: #000;
+  position: absolute;
+  right: -46px;
+  top: 50%;
+}
+
+.timeline .block-content::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  right: -58px;
+  top: calc(50% - 8px);
+}
+
+.timeline .block-content.right::after {
+  left: -46px;
+  right: none;
+}
+
+.timeline .block-content.right::before {
+  left: -58px;
+  right: none;
+}
+
+
 
 #wrapper-footer, #wrapper-footer-full {
 	background-color: $blue;
@@ -396,51 +323,10 @@ blockquote.big-quote footer p {
 		display: none;
 	}
 
-	.timeline {
-		margin: 20px 0;
-	}
-  	.timeline::after {
-	    left: 90px;
-	  }
-
-  .timeline-container {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  .timeline .block {
+    grid-template-columns: 1fr;
   }
 
-  .timeline-container.right {
-    left: 0%;
-  }
-
-.timeline::after,
-.timeline-container::before,
-.timeline-container.left::before,
-  .timeline-container.right::before {
-    display: none;
-  }
-
-  .timeline-container.left .date,
-  .timeline-container.right .date {
-    position: relative;
-    right: 0;
-    left: 0;
-  }
-  .timeline-container::after{
-  	display: none;
-  }
-  .timeline-container.left .icon,
-  .timeline-container.right .icon {
-    right: auto;
-    left: 0;
-    display: none;
-  }
-
-  .timeline-container.left .content,
-  .timeline-container.right .content {
-    padding: 30px;
-    border-radius: 50px 0 0 50px;
-  }
 }
 
 //deal with wp admin bar and fixed top menu really well
