@@ -437,10 +437,10 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "bce": "BCE",
-                                        "ce": "CE"
+                                        "BCE": "BCE",
+                                        "CE": "CE"
                                     },
-                                    "default_value": "ce",
+                                    "default_value": "CE",
                                     "return_format": "value",
                                     "multiple": 0,
                                     "allow_null": 0,
@@ -551,7 +551,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "project"
+                "value": "post"
             }
         ]
     ],
@@ -564,5 +564,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696522344
+    "modified": 1696602908
 }

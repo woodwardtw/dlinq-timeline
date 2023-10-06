@@ -58,17 +58,20 @@
                     // code...                   
                         $title = $event['title'] ? "<h2>{$event['title']}</h2>" : '';
                         $content = $event['content'];                        
-                        $year = ($event['year'] != 0) ? $event['year'] : '';
-                        $month = ($event['month'] != 0) ? $event['month'] : '';
-                        $day = ($event['day'] != 0) ? $event['day'] : '';
-                        $era = $event['era'];
+                        $year = ($event['year'] > 0)  ? $event['year'] : 1;
+                        $month = ($event['month'] > 0) ? $event['month'] : 1;
+                        $day = ($event['day'] > 0) ? $event['day'] : 1;
+                        $era = (get_field('show_era', 'options') == 'yes') ? $event['era'] : '';
                         $color = $event['color'];
-                        $date = "{$year}";
                         $align = ($key % 2 == 0) ? 'right' : 'left';
+                        $datetime = new DateTime();
+                        $date_format = get_field('date_format', 'options');                   
+                        $new_date = $datetime->createFromFormat('d/m/Y', "{$day}/{$month}/{$year}");
+                        $formatted_date = $new_date->format($date_format);
                         echo "
                              <div class='block'>
                                 <div class='block-content {$align} {$color}'>
-                                    <div class='date'>{$year} {$month} {$day}</div>
+                                    <div class='date'>{$formatted_date} {$era}</div>
                                     <div class='icon'></div>
                                     <div class='content'>
                                         {$title}

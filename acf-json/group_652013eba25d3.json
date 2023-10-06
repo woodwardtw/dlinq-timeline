@@ -1,0 +1,81 @@
+{
+    "key": "group_652013eba25d3",
+    "title": "Timeline Options",
+    "fields": [
+        {
+            "key": "field_652013ec30487",
+            "label": "Show BCE\/CE Era",
+            "name": "show_era",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "yes": "Yes",
+                "no": "No"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6520142f30488",
+            "label": "Date format",
+            "name": "date_format",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "d\/m\/Y": "DD\/MM\/YYYY (02\/17\/2009)",
+                "Y\/m\/d": "YYYY\/MM\/DD (17\/02\/2009)",
+                "F d, Y": "Month DD, YYYY (February 02, 2009)",
+                "d": "Day (02)",
+                "F": "Month (February)",
+                "Y": "Year (2009)",
+                "F Y": "Month Year (February 2009)"
+            },
+            "default_value": "F d, Y",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "timeline-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1696602451
+}

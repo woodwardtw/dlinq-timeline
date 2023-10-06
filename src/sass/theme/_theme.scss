@@ -302,6 +302,8 @@ blockquote.big-quote footer p {
 @media (max-width: 1400px) {
    .timeline {
     background-position: 10px;
+    margin: 50px 0;
+    padding-right: 0;
    }
    .timeline .block {
     grid-template-columns: 1fr;
