@@ -16661,7 +16661,7 @@ blockquote.big-quote footer p {
 }
 
 /*TIMELINE STUFF*/
-.timeline {
+.timeline-holder {
   width: 90%;
   margin: 50px auto;
   height: 100%;
@@ -16672,7 +16672,7 @@ blockquote.big-quote footer p {
   padding: 50px;
 }
 
-.timeline .block {
+.timeline-holder .block {
   min-height: 100px;
   margin: 60px 0;
   display: grid;
@@ -16681,59 +16681,59 @@ blockquote.big-quote footer p {
   column-gap: 90px;
 }
 
-.timeline h2, .timeline .h2 {
+.timeline-holder h2, .timeline-holder .h2 {
   font-size: 1.5rem;
 }
 
-.timeline .block-content {
+.timeline-holder .block-content {
   position: relative;
   background: #fff;
   border: 3px solid #000;
 }
 
-.timeline .block-content.blue {
+.timeline-holder .block-content.blue {
   background-color: rgba(2, 37, 67, 0.09);
   color: #022543;
   border-color: #022543;
 }
 
-.timeline .block-content.blue::after, .timeline .block-content.blue::before {
+.timeline-holder .block-content.blue::after, .timeline-holder .block-content.blue::before {
   background-color: #022543;
 }
 
-.timeline .block-content.red {
+.timeline-holder .block-content.red {
   background-color: rgba(144, 14, 14, 0.09);
   color: #900e0e;
   border-color: #900e0e;
 }
 
-.timeline .block-content.red::after, .timeline .block-content.red::before {
+.timeline-holder .block-content.red::after, .timeline-holder .block-content.red::before {
   background-color: #900e0e;
 }
 
-.timeline .block-content.green {
+.timeline-holder .block-content.green {
   background-color: rgba(18, 96, 60, 0.09);
   color: #12603c;
   border-color: #12603c;
 }
 
-.timeline .block-content.green::after, .timeline .block-content.green::before {
+.timeline-holder .block-content.green::after, .timeline-holder .block-content.green::before {
   background-color: #12603c;
 }
 
-.timeline .left {
+.timeline-holder .left {
   grid-column-start: 1;
   padding: 40px;
 }
 
-.timeline .right {
+.timeline-holder .right {
   background: #fff;
   grid-column-start: 2;
   grid-column-end: 2;
   padding: 40px;
 }
 
-.timeline .block-content::after {
+.timeline-holder .block-content::after {
   content: "";
   display: block;
   width: 46px;
@@ -16744,7 +16744,7 @@ blockquote.big-quote footer p {
   top: 50%;
 }
 
-.timeline .block-content::before {
+.timeline-holder .block-content::before {
   content: "";
   display: block;
   width: 20px;
@@ -16756,14 +16756,24 @@ blockquote.big-quote footer p {
   top: calc(50% - 8px);
 }
 
-.timeline .block-content.right::after {
+.timeline-holder .block-content.right::after {
   left: -46px;
   right: none;
 }
 
-.timeline .block-content.right::before {
+.timeline-holder .block-content.right::before {
   left: -58px;
   right: none;
+}
+
+.date {
+  font-size: 1.5rem;
+  /* font-weight: 200; */
+  margin-bottom: 20px;
+}
+
+.left .date {
+  text-align: right;
 }
 
 #wrapper-footer, #wrapper-footer-full {
@@ -16773,29 +16783,29 @@ blockquote.big-quote footer p {
 }
 
 @media (max-width: 1400px) {
-  .timeline {
+  .timeline-holder {
     background-position: 10px;
     margin: 50px 0;
     padding-right: 0;
   }
 
-  .timeline .block {
+  .timeline-holder .block {
     grid-template-columns: 1fr;
   }
 
-  .timeline .left, .timeline .right {
+  .timeline-holder .left, .timeline-holder .right {
     grid-column-start: 1;
     padding: 40px;
   }
 
-  .timeline .block-content::after, .timeline .block-content.right::after {
+  .timeline-holder .block-content::after, .timeline-holder .block-content.right::after {
     content: "";
     width: 38px;
     left: -38px;
     top: 50%;
   }
 
-  .timeline .block-content::before, .timeline .block-content.right::before {
+  .timeline-holder .block-content::before, .timeline-holder .block-content.right::before {
     content: "";
     display: block;
     left: -50px;

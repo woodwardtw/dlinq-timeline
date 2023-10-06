@@ -36,72 +36,46 @@ function treehouse_timeline(){
 	}
 }
 
-//PROJECT FUNCTIONS
-function treehouse_project_description(){
-	if(get_field('project_description')){
-		$desc = get_field('project_description');
-		echo "
-			<div class='project-block'>
-			{$desc}
-			</div>
-		";
-	}
+
+
+function timelinesorter_load_value( $value, $post_id, $field ) {
+    
+    // vars
+    $order = array();
+    
+    
+    // bail early if no value
+    if( empty($value) ) {
+        
+        return $value;
+        
+    }
+    
+    
+    // populate order
+    foreach( $value as $i => $row ) {
+        
+        $order[ $i ] = $row['field_651edc13497dc'];
+        
+    }
+    
+    
+    // multisort
+    array_multisort( $order, SORT_DESC, $value );
+    
+    
+    // return   
+    return $value;
+    
 }
 
-function treehouse_project_students(){
-	$html = '';
-	$plural = count(get_field('students')) ? 's' : '';
-	if( have_rows('students') ):
-		echo "
-			<div class='project-sidebar'>
-				<h2>Student{$plural}</h2>
-		";
-	    // Loop through rows.
-	    while( have_rows('students') ) : the_row();
-
-	        // Load sub field value.
-	        $name = get_sub_field('student_name');
-	        $class = get_sub_field('class_of');
-	        // Do something...
-	        echo "
-	        	<div class='project-student-block'>
-	        		{$name} - class of {$class}
-	        	</div>
-	        ";
-	    // End loop.
-	    endwhile;	
-	    echo "</div>";    
-		else :
-		    // Do something...
-		endif;
-	}
-
-
-
-//change title for ACF flexible layout in collapsed mode
-
-add_filter('acf/fields/flexible_content/layout_title/name=content', 'dlinq_acf_fields_flexible_content_layout_title', 10, 4);
-function dlinq_acf_fields_flexible_content_layout_title( $title, $field, $layout, $i ) {
-
-    if( get_sub_field('sub_topic_title') ) {
-        $title .= ' - ' . get_sub_field('sub_topic_title');     
-    }
-	if( get_sub_field('title') ) {
-        $title .= ' - ' . get_sub_field('title');     
-    }
-	 if( get_sub_field('accordion_title') ) {
-        $title .= ' - ' . get_sub_field('accordion_title');     
-    }
-
-    return $title;
-}
-
+add_filter('acf/load_value/key=group_6512e4deef651', 'timelinesorter_load_value', 10, 3);
 
 
 	//save acf json
-		add_filter('acf/settings/save_json', 'treehouse_json_save_point');
+		add_filter('acf/settings/save_json', 'timeline_json_save_point');
 		 
-		function treehouse_json_save_point( $path ) {
+		function timeline_json_save_point( $path ) {
 		    
 		    // update path
 		    $path = get_stylesheet_directory() . '/acf-json'; //replace w get_stylesheet_directory() for theme
@@ -114,9 +88,9 @@ function dlinq_acf_fields_flexible_content_layout_title( $title, $field, $layout
 
 
 		// load acf json
-		add_filter('acf/settings/load_json', 'treehouse_json_load_point');
+		add_filter('acf/settings/load_json', 'timeline_json_load_point');
 
-		function treehouse_json_load_point( $paths ) {
+		function timeline_json_load_point( $paths ) {
 		    
 		    // remove original path (optional)
 		    unset($paths[0]);

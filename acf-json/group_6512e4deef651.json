@@ -250,7 +250,7 @@
                             "layout": "block",
                             "min": 0,
                             "max": 0,
-                            "collapsed": "",
+                            "collapsed": "field_6514219994d26",
                             "button_label": "Add Event",
                             "rows_per_page": 20,
                             "sub_fields": [
@@ -542,9 +542,9 @@
         ],
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "page-templates\/timeline.php"
+                "value": "timeline"
             }
         ],
         [
@@ -560,9 +560,11 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696602908
+    "modified": 1696620222
 }

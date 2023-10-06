@@ -52,7 +52,7 @@
         <?php if( get_row_layout() == 'timeline' ): 
             $events = get_sub_field('events');
         ?>
-            <div class="timeline">
+            <div class="timeline-holder">
                 <?php 
                 foreach ($events as $key => $event) {
                     // code...                   
@@ -67,7 +67,7 @@
                         $datetime = new DateTime();
                         $date_format = get_field('date_format', 'options');                   
                         $new_date = $datetime->createFromFormat('d/m/Y', "{$day}/{$month}/{$year}");
-                        $formatted_date = $new_date->format($date_format);
+                        $formatted_date = (get_field('show_dates', 'options') == 'yes') ? $new_date->format($date_format) : '';
                         echo "
                              <div class='block'>
                                 <div class='block-content {$align} {$color}'>
