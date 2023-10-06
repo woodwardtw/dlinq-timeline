@@ -71,3 +71,5 @@ function mce_formats( $init ) {
 	return $init;
 }
 add_filter( 'tiny_mce_before_init', __NAMESPACE__ . '\\mce_formats' );
+
+add_theme_support( 'responsive-embeds');

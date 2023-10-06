@@ -16772,6 +16772,34 @@ blockquote.big-quote footer p {
   padding: 200px 5vw;
 }
 
+@media (max-width: 1400px) {
+  .timeline {
+    background-position: 10px;
+  }
+
+  .timeline .block {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline .left, .timeline .right {
+    grid-column-start: 1;
+    padding: 40px;
+  }
+
+  .timeline .block-content::after, .timeline .block-content.right::after {
+    content: "";
+    width: 38px;
+    left: -38px;
+    top: 50%;
+  }
+
+  .timeline .block-content::before, .timeline .block-content.right::before {
+    content: "";
+    display: block;
+    left: -50px;
+    top: calc(50% - 8px);
+  }
+}
 @media (max-width: 767px) {
   h1, .h1 {
     font-size: 3.5rem;
@@ -16798,10 +16826,6 @@ blockquote.big-quote footer p {
     margin: 0 20px 0 20px;
     display: none;
   }
-
-  .timeline .block {
-    grid-template-columns: 1fr;
-  }
 }
 :root {
   --login-bar-height: 0;
@@ -16823,6 +16847,21 @@ blockquote.big-quote footer p {
 
 .main-content {
   padding-top: calc((var(--menu-bar-height) + var(--login-bar-height)) * 1px);
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 /*# sourceMappingURL=theme.css.map */
