@@ -97,9 +97,11 @@
                         $day = ($event['day'] > 0) ? $event['day'] : 1;
                         $era = (get_field('show_era', 'options') == 'yes') ? $event['era'] : '';
                         $color = $event['color'];
-                        $img = '';
+                        $img_url = $event['image']["sizes"]["medium"];
+                        $img_id = $event['image']['ID'];
+                        var_dump($img_id);
                         $caption = $event['caption'];
-                        $keywords = ($event['keywords']) ? "<div class='keywords'><p></p><h3>Keywords</h3>{$event['keywords']}</div>" : '';
+                        $keywords = ($event['keywords']) ? "<div class='keywords'><h3>Keywords</h3><p>{$event['keywords']}</p></div>" : '';
                         $sources = ($event['sources']) ? "<div class='sources'><h3>Sources</h3>{$event['sources']}</div>" : '';
                         $align = ($key % 2 == 0) ? 'right' : 'left';
                         $datetime = new DateTime();
@@ -113,6 +115,7 @@
                                     <div class='icon'></div>
                                     <div class='content'>
                                         {$title}
+                                        <img src='{$img_url}' class='img-fluid aligncenter'>
                                         {$caption}
                                         {$keywords}
                                         {$sources}
