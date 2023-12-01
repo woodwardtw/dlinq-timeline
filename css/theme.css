@@ -16776,6 +16776,18 @@ blockquote.big-quote footer p {
   text-align: right;
 }
 
+.sources p {
+  font-size: 1rem;
+}
+
+.timeline-holder .content div {
+  margin-top: 25px;
+}
+
+.timeline-holder .content h3, .timeline-holder .content .h3 {
+  font-size: 1.1rem;
+}
+
 #wrapper-footer, #wrapper-footer-full {
   background-color: #022543;
   color: #ffffff;

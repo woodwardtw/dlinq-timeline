@@ -99,8 +99,8 @@
                         $color = $event['color'];
                         $img_url = $event['image']["sizes"]["medium"];
                         $img_id = $event['image']['ID'];
-                        var_dump($img_id);
-                        $caption = $event['caption'];
+                        $alt = get_post_meta($img_id, '_wp_attachment_image_alt', TRUE);
+                        $caption = ($event['caption']) ? "<div class='caption'>{$event['caption']}</div>" : '';
                         $keywords = ($event['keywords']) ? "<div class='keywords'><h3>Keywords</h3><p>{$event['keywords']}</p></div>" : '';
                         $sources = ($event['sources']) ? "<div class='sources'><h3>Sources</h3>{$event['sources']}</div>" : '';
                         $align = ($key % 2 == 0) ? 'right' : 'left';
@@ -115,7 +115,7 @@
                                     <div class='icon'></div>
                                     <div class='content'>
                                         {$title}
-                                        <img src='{$img_url}' class='img-fluid aligncenter'>
+                                        <img src='{$img_url}' class='img-fluid aligncenter event-img' alt='{$alt}'>
                                         {$caption}
                                         {$keywords}
                                         {$sources}
