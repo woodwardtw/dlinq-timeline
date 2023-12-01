@@ -73,3 +73,32 @@ function mce_formats( $init ) {
 add_filter( 'tiny_mce_before_init', __NAMESPACE__ . '\\mce_formats' );
 
 add_theme_support( 'responsive-embeds');
+
+
+
+//hide show elements based on option set
+//shows/hides standard content piece
+function dlinq_acf_regular_event( $field ) {
+    // Don't show this field once it contains a value.
+    if( get_field('structured_events', 'options') === 'yes' ) {
+        return false;
+    }
+    return $field;
+}
+
+// Apply to fields named "example_field".
+add_filter('acf/prepare_field/key=field_6514218c94d25', 'dlinq_acf_regular_event');
+
+//shows/hides standard content piece
+function dlinq_acf_structured_event( $field ) {
+
+    // Don't show this field once it contains a value.
+    if( get_field('structured_events', 'options') === 'no' ) {
+        return false;
+    }
+    return $field;
+}
+
+// Apply to fields named "example_field".
+add_filter('acf/prepare_field/key=field_6569f3aeaceaf', 'dlinq_acf_structured_event');
+

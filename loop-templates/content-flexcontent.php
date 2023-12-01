@@ -51,7 +51,9 @@
         <!--timeline loop-->
         <?php if( get_row_layout() == 'timeline' ): 
             $events = get_sub_field('events');
+            $structured_events = get_sub_field('structured_events');
         ?>
+        <?php if ($events):?>
             <div class="timeline-holder">
                 <?php 
                 foreach ($events as $key => $event) {
@@ -84,6 +86,45 @@
                 ?>
 
             </div>
+            <?php elseif ($structured_events):?>
+            <div class="timeline-holder">
+                <?php 
+                foreach ($structured_events as $key => $event) {
+                    // code...                   
+                        $title = $event['title'] ? "<h2>{$event['title']}</h2>" : '';
+                        $year = ($event['year'] > 0)  ? $event['year'] : 1;
+                        $month = ($event['month'] > 0) ? $event['month'] : 1;
+                        $day = ($event['day'] > 0) ? $event['day'] : 1;
+                        $era = (get_field('show_era', 'options') == 'yes') ? $event['era'] : '';
+                        $color = $event['color'];
+                        $img = '';
+                        $caption = $event['caption'];
+                        $keywords = ($event['keywords']) ? "<div class='keywords'><p></p><h3>Keywords</h3>{$event['keywords']}</div>" : '';
+                        $sources = ($event['sources']) ? "<div class='sources'><h3>Sources</h3>{$event['sources']}</div>" : '';
+                        $align = ($key % 2 == 0) ? 'right' : 'left';
+                        $datetime = new DateTime();
+                        $date_format = get_field('date_format', 'options');                   
+                        $new_date = $datetime->createFromFormat('d/m/Y', "{$day}/{$month}/{$year}");
+                        $formatted_date = (get_field('show_dates', 'options') == 'yes') ? $new_date->format($date_format) : '';
+                        echo "
+                             <div class='block'>
+                                <div class='block-content {$align} {$color}'>
+                                    <div class='date'>{$formatted_date} {$era}</div>
+                                    <div class='icon'></div>
+                                    <div class='content'>
+                                        {$title}
+                                        {$caption}
+                                        {$keywords}
+                                        {$sources}
+                                    </div>
+                              </div>
+                            </div>
+                        ";
+                    }                
+                ?>
+
+            </div>
+            <?php endif;?>
         <?php endif;?>
         <!--Big Quote loop-->
          <?php if( get_row_layout() == 'big_quote' ): 
