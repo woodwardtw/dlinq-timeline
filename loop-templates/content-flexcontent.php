@@ -94,22 +94,41 @@
                 foreach ($structured_events as $key => $event) {
                     // code...                   
                         $title = $event['title'] ? "<h2>{$event['title']}</h2>" : '';
-                        $year = ($event['year'] > 0)  ? $event['year'] : 1;
-                        $month = ($event['month'] > 0) ? $event['month'] : 1;
-                        $day = ($event['day'] > 0) ? $event['day'] : 1;
+                        $year = ($event['year'] > 0)  ? $event['year']  : '';
+                        $month = ($event['month'] > 0) ? $event['month'] : 0;
+                        if($month >0){
+                            $dateObj   = DateTime::createFromFormat('!m', $month);
+                            $month_name = $dateObj->format('F') . ' '; // March
+                        } else {
+                            $month_name = '';
+                        }
+                       
+                        $day = ($event['day'] > 0) ? $event['day'] : 0;
+                        if($day>0){
+                            $day_name = $day . ', ';
+                        } else {
+                            $day_name = '';
+                        }
                         $era = (get_field('show_era', 'options') == 'yes') ? $event['era'] : '';
                         $color = $event['color'];
-                        $img_url = $event['image']["sizes"]["medium"];
-                        $img_id = $event['image']['ID'];
-                        $alt = get_post_meta($img_id, '_wp_attachment_image_alt', TRUE);
-                        $caption = ($event['caption']) ? "<div class='caption'>{$event['caption']}</div>" : '';
+                        $img_html = '';
+                        $caption = '';
+                        if($event['image']){
+                            $img_url = $event['image']["sizes"]["medium"];
+                            $img_id = $event['image']['ID'];
+                            $alt = get_post_meta($img_id, '_wp_attachment_image_alt', TRUE);
+                            $caption = ($event['caption']) ? "<div class='caption'>{$event['caption']}</div>" : '';
+                            $img_html = "<img src='{$img_url}' class='img-fluid aligncenter event-img' alt='{$alt}'>";
+                        }
+                       
                         $keywords = ($event['keywords']) ? "<div class='keywords'><h3>Keywords</h3><p>{$event['keywords']}</p></div>" : '';
                         $sources = ($event['sources']) ? "<div class='sources'><h3>Sources</h3>{$event['sources']}</div>" : '';
                         $align = ($key % 2 == 0) ? 'right' : 'left';
                         $datetime = new DateTime();
-                        $date_format = get_field('date_format', 'options');                   
-                        $new_date = $datetime->createFromFormat('d/m/Y', "{$day}/{$month}/{$year}");
-                        $formatted_date = (get_field('show_dates', 'options') == 'yes') ? $new_date->format($date_format) : '';
+                        // $date_format = get_field('date_format', 'options');                   
+                        // $new_date = $datetime->createFromFormat('Y', "{$year}");
+                        // $formatted_date = (get_field('show_dates', 'options') == 'yes') ? $new_date->format($date_format) : '';
+                        $formatted_date = $month_name . $day_name . $year;
                         echo "
                              <div class='block'>
                                 <div class='block-content {$align} {$color}'>
@@ -117,7 +136,7 @@
                                     <div class='icon'></div>
                                     <div class='content'>
                                         {$title}
-                                        <img src='{$img_url}' class='img-fluid aligncenter event-img' alt='{$alt}'>
+                                        {$img_html}
                                         {$caption}
                                         {$keywords}
                                         {$sources}

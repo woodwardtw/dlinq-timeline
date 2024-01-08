@@ -689,6 +689,209 @@
                                     "parent_repeater": "field_6569f3aeaceaf"
                                 },
                                 {
+                                    "key": "field_659c5e02b9525",
+                                    "label": "Add an end date",
+                                    "name": "add_an_end_date",
+                                    "aria-label": "",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "Yes": "Yes",
+                                        "No": "No"
+                                    },
+                                    "default_value": "No",
+                                    "return_format": "value",
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "layout": "vertical",
+                                    "save_other_choice": 0,
+                                    "parent_repeater": "field_6569f3aeaceaf"
+                                },
+                                {
+                                    "key": "field_659c5e3db9526",
+                                    "label": "End Year",
+                                    "name": "end_year",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_659c5e02b9525",
+                                                "operator": "==",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "min": "",
+                                    "max": "",
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_6569f3aeaceaf"
+                                },
+                                {
+                                    "key": "field_659c5e5ab9528",
+                                    "label": "End Month",
+                                    "name": "end_month",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_659c5e02b9525",
+                                                "operator": "==",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "23",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": [
+                                        "0",
+                                        "1",
+                                        "2",
+                                        "3",
+                                        "4",
+                                        "5",
+                                        "6",
+                                        "7",
+                                        "8",
+                                        "9",
+                                        "10",
+                                        "11",
+                                        "12"
+                                    ],
+                                    "default_value": false,
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_6569f3aeaceaf"
+                                },
+                                {
+                                    "key": "field_659c5e6bb9529",
+                                    "label": "End Day",
+                                    "name": "end_day",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_659c5e02b9525",
+                                                "operator": "==",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "23",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": [
+                                        "0",
+                                        "1",
+                                        "2",
+                                        "3",
+                                        "4",
+                                        "5",
+                                        "6",
+                                        "7",
+                                        "8",
+                                        "9",
+                                        "10",
+                                        "11",
+                                        "12",
+                                        "13",
+                                        "14",
+                                        "15",
+                                        "16",
+                                        "17",
+                                        "18",
+                                        "19",
+                                        "20",
+                                        "21",
+                                        "22",
+                                        "23",
+                                        "24",
+                                        "25",
+                                        "26",
+                                        "27",
+                                        "28",
+                                        "29",
+                                        "30",
+                                        "31"
+                                    ],
+                                    "default_value": false,
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_6569f3aeaceaf"
+                                },
+                                {
+                                    "key": "field_659c5f9ca3d92",
+                                    "label": "End Era",
+                                    "name": "end_era",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_659c5e02b9525",
+                                                "operator": "==",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "18",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "BCE": "BCE",
+                                        "CE": "CE"
+                                    },
+                                    "default_value": "CE",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_6569f3aeaceaf"
+                                },
+                                {
                                     "key": "field_6569f458608d3",
                                     "label": "Image",
                                     "name": "image",
@@ -899,5 +1102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701447730
+    "modified": 1704746991
 }
