@@ -60,14 +60,15 @@
                     // code...                   
                         $title = $event['title'] ? "<h2>{$event['title']}</h2>" : '';
                         $content = $event['content'];                        
-                        $year = ($event['year'] > 0)  ? $event['year'] : 1;
-                        $month = ($event['month'] > 0) ? $event['month'] : 1;
-                        $day = ($event['day'] > 0) ? $event['day'] : 1;
+                        $year = ($event['year'] > 0)  ? $event['year'] : 0;
+                        $month = ($event['month'] > 0) ? $event['month'] : 0;
+                        $day = ($event['day'] > 0) ? $event['day'] : 0;
                         $era = (get_field('show_era', 'options') == 'yes') ? $event['era'] : '';
                         $color = $event['color'];
                         $align = ($key % 2 == 0) ? 'right' : 'left';
                         $datetime = new DateTime();
-                        $date_format = get_field('date_format', 'options');                   
+                        $date_format = get_field('date_format', 'options');
+
                         $new_date = $datetime->createFromFormat('d/m/Y', "{$day}/{$month}/{$year}");
                         $formatted_date = (get_field('show_dates', 'options') == 'yes') ? $new_date->format($date_format) : '';
                         echo "
@@ -86,7 +87,8 @@
                 ?>
 
             </div>
-            <?php elseif ($structured_events):?>
+            <?php endif;?>
+            <?php if ($structured_events):?>
             <div class="timeline-holder">
                 <?php 
                 foreach ($structured_events as $key => $event) {
