@@ -129,10 +129,31 @@
                         // $new_date = $datetime->createFromFormat('Y', "{$year}");
                         // $formatted_date = (get_field('show_dates', 'options') == 'yes') ? $new_date->format($date_format) : '';
                         $formatted_date = $month_name . $day_name . $year;
+                        //END DATE
+                        $end_year = ($event['end_year'] > 0)  ? $event['end_year']  : '';
+                        $end_month = ($event['end_month'] > 0) ? $event['end_month'] : 0;
+                        if($end_month >0){
+                            $dateObj   = DateTime::createFromFormat('!m', $end_month);
+                            $end_month_name = $dateObj->format('F') . ' '; // March
+                        } else {
+                            $end_onth_name = '';
+                        }
+                       
+                        $end_day = ($event['end_day'] > 0) ? $event['end_day'] : 0;
+                        if($end_day>0){
+                            $end_day_name = $day . ', ';
+                        } else {
+                            $end_day_name = '';
+                        }
+                        if($end_year != '' || $end_month != '' || $end_day != ''){
+                            $end_formatted_date = ' - ' .$end_month_name . $end_day_name . $end_year;
+                        } else{
+                            $end_formatted_date = '';
+                        }
                         echo "
                              <div class='block'>
                                 <div class='block-content {$align} {$color}'>
-                                    <div class='date'>{$formatted_date} {$era}</div>
+                                    <div class='date'>{$formatted_date} {$era} $end_formatted_date</div>
                                     <div class='icon'></div>
                                     <div class='content'>
                                         {$title}
