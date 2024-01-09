@@ -131,7 +131,7 @@
                         $formatted_date = $month_name . $day_name . $year;
                         //END DATE
                         $end_year = ($event['end_year'] > 0)  ? $event['end_year']  : '';
-                        $end_month = ($event['end_month'] > 0) ? $event['end_month'] : 0;
+                        $end_month = ($event['end_month'] > 0) ? $event['end_month'] : '';
                         if($end_month >0){
                             $dateObj   = DateTime::createFromFormat('!m', $end_month);
                             $end_month_name = $dateObj->format('F') . ' '; // March
@@ -139,9 +139,9 @@
                             $end_onth_name = '';
                         }
                        
-                        $end_day = ($event['end_day'] > 0) ? $event['end_day'] : 0;
+                        $end_day = ($event['end_day'] > 0) ? $event['end_day'] : '';
                         if($end_day>0){
-                            $end_day_name = $day . ', ';
+                            $end_day_name = $end_day . ', ';
                         } else {
                             $end_day_name = '';
                         }
