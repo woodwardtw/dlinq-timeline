@@ -3,14 +3,14 @@
     <?php $index = get_row_index(); ?>   
         <!--IMAGE LOOP-->            
         <?php if( get_row_layout() == 'text_with_image' ): 
-            $title = get_sub_field('title');
-            $slug = sanitize_title($title);
-            $content = get_sub_field('content');
-            $image = get_sub_field('image');
-            $direction = get_sub_field('image_align');
-            $color = get_sub_field('color');
-            $order_left = ' order-first ';
-            $order_right = ' order-last ';
+                $title = get_sub_field('title');
+                $slug = sanitize_title($title);
+                $content = get_sub_field('content');
+                $image = get_sub_field('image');
+                $direction = get_sub_field('image_align');
+                $color = get_sub_field('color');
+                $order_left = ' order-first ';
+                $order_right = ' order-last ';
             if($direction == 'right'){
                 $order_left = ' order-last ';
                 $order_right = ' order-first ';
