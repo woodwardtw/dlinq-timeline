@@ -1078,9 +1078,9 @@
         ],
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "timeline"
+                "value": "page-templates\/timeline.php"
             }
         ],
         [
@@ -1102,5 +1102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1704746991
+    "modified": 1736355279
 }
